@@ -8,7 +8,7 @@ namespace Store.Web.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Admin/Home
+        // GET: Admin/Home new one
         public ActionResult Index()
         {
             return View();
