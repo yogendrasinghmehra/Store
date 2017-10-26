@@ -45,9 +45,7 @@ namespace Store.Web.Models
         //order tables
         public DbSet<OrderMaster> orderMaster { get; set; }
         public DbSet<OrderDetails> orderDetails { get; set; }
-        
 
-
-
+      
     }
 }

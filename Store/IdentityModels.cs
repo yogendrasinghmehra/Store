@@ -43,9 +43,9 @@ namespace Store.Models
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
         //products tables
-        public DbSet<ProductSize>productSize { get; set; }
-        public DbSet <ProductColor>productColor { get; set; }
-        public DbSet <ProductBrand>productBrand { get; set; }
+        public DbSet<ProductSize> productSize { get; set; }
+        public DbSet<ProductColor> productColor { get; set; }
+        public DbSet<ProductBrand> productBrand { get; set; }
         public DbSet<ProductSubCategory> productSubCategory { get; set; }
         public DbSet<ProductCategory> productCategory { get; set; }
         public DbSet<ProductMaster> productMaster { get; set; }
@@ -54,7 +54,7 @@ namespace Store.Models
         //order tables
         public DbSet<OrderMaster> orderMaster { get; set; }
         public DbSet<OrderDetails> orderDetails { get; set; }
-        
+
 
 
 

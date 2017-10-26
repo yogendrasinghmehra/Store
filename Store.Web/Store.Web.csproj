@@ -46,6 +46,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -174,17 +177,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Cart\CartDetails.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Order\OrderDetails.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Order\OrderMaster.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Product\Product.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Product\ProductBrand.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Product\ProductCategory.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Product\ProductColor.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Product\ProductImages.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Product\ProductReviews.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Product\ProductSize.cs" />
-    <Compile Include="Areas\Admin\ViewModels\Product\ProductSubCategory.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductBrandsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductColorsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductSizesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductSubCategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,7 +192,6 @@
       <DependentUpon>201710240143410_first changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +248,36 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductBrands\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductBrands\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductBrands\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductBrands\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductBrands\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductColors\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductColors\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductColors\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductColors\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductColors\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSizes\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSizes\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSizes\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSizes\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSizes\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSubCategories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSubCategories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSubCategories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSubCategories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductSubCategories\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -280,6 +307,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Models\" />
     <Folder Include="Scripts\ViewScripts\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
