@@ -179,6 +179,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductBrandsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductChildCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductColorsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductSizesController.cs" />
@@ -190,6 +191,14 @@
     <Compile Include="Migrations\201710240143410_first changes.cs" />
     <Compile Include="Migrations\201710240143410_first changes.Designer.cs">
       <DependentUpon>201710240143410_first changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710271612437_Child category Added.cs" />
+    <Compile Include="Migrations\201710271612437_Child category Added.Designer.cs">
+      <DependentUpon>201710271612437_Child category Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710271615178_Child category renamed.cs" />
+    <Compile Include="Migrations\201710271615178_Child category renamed.Designer.cs">
+      <DependentUpon>201710271615178_Child category renamed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -278,6 +287,11 @@
     <Content Include="Areas\Admin\Views\ProductSubCategories\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ProductSubCategories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ProductSubCategories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductChildCategories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductChildCategories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductChildCategories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductChildCategories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductChildCategories\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -333,6 +347,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710240143410_first changes.resx">
       <DependentUpon>201710240143410_first changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710271612437_Child category Added.resx">
+      <DependentUpon>201710271612437_Child category Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710271615178_Child category renamed.resx">
+      <DependentUpon>201710271615178_Child category renamed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

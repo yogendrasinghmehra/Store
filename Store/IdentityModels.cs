@@ -47,6 +47,7 @@ namespace Store.Models
         public DbSet<ProductColor> productColor { get; set; }
         public DbSet<ProductBrand> productBrand { get; set; }
         public DbSet<ProductSubCategory> productSubCategory { get; set; }
+        public DbSet<ProductChildCategory> childCategory { get; set; }
         public DbSet<ProductCategory> productCategory { get; set; }
         public DbSet<ProductMaster> productMaster { get; set; }
         public DbSet<ProductImages> productImages { get; set; }
