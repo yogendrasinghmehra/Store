@@ -64,4 +64,28 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(function () {
+            //binding sub category
+            $('#CategoryId').change(function () {
+                if ($(this).val()) {
+                    $.ajax({
+                        type: "GET",
+                        url: '@Url.Action("GetSubCategories")',
+                        data: { 'CatId': $(this).val()},
+                        dataType: 'json',
+                        success: function (data) {
+                            $('#SubCategoryId').empty();                           
+                            $.each(data, function (key, value) {
+                                $('#SubCategoryId').append("<option value='" + value.SubCategoryId + "'>" + value.SubCategoryName + "</option>");
+                            })
+                        }
+                    });
+                }
+            })           
+            })       
+
+    </script>
+
 }

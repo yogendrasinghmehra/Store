@@ -15,14 +15,14 @@ namespace Store.Web.Areas.Admin.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Admin/ProductChildCategories
+        
         public ActionResult Index()
         {
             var childCategory = db.childCategory.Include(p => p.ProductCategory).Include(p => p.ProductSubCategory);
             return View(childCategory.ToList());
         }
 
-        // GET: Admin/ProductChildCategories/Details/5
+        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,7 +37,7 @@ namespace Store.Web.Areas.Admin.Controllers
             return View(productChildCategory);
         }
 
-        // GET: Admin/ProductChildCategories/Create
+        
         public ActionResult Create()
         {
             ViewBag.CategoryId = new SelectList(db.productCategory, "CategoryId", "CategoryName");
@@ -45,9 +45,7 @@ namespace Store.Web.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/ProductChildCategories/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ChildCategoryId,SubCategoryId,CategoryId,ChildCategoryName")] ProductChildCategory productChildCategory)
@@ -64,7 +62,7 @@ namespace Store.Web.Areas.Admin.Controllers
             return View(productChildCategory);
         }
 
-        // GET: Admin/ProductChildCategories/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -81,9 +79,7 @@ namespace Store.Web.Areas.Admin.Controllers
             return View(productChildCategory);
         }
 
-        // POST: Admin/ProductChildCategories/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ChildCategoryId,SubCategoryId,CategoryId,ChildCategoryName")] ProductChildCategory productChildCategory)
@@ -123,6 +119,24 @@ namespace Store.Web.Areas.Admin.Controllers
             db.childCategory.Remove(productChildCategory);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public JsonResult GetSubCategories(int CatId)
+        {
+           
+            return Json((from a in db.productSubCategory
+                         where a.CategoryId == CatId
+                         select new { a.SubCategoryId, a.SubCategoryName }).ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetChildCategories(int SubCatId)
+        {
+
+            return Json((from a in db.childCategory
+                         where a.SubCategoryId == SubCatId
+                         select new { a.ChildCategoryId, a.ChildCategoryName }).ToList(), JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

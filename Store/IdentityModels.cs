@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Store.Entity.Product;
 using Store.Entity.Order;
+using Store.Entity;
 
 namespace Store.Models
 {
@@ -50,14 +51,14 @@ namespace Store.Models
         public DbSet<ProductChildCategory> childCategory { get; set; }
         public DbSet<ProductCategory> productCategory { get; set; }
         public DbSet<ProductMaster> productMaster { get; set; }
+        public DbSet<ProductColorMaster> ProductColorMaster { get; set; }
+        public DbSet<ProductSizeMaster> ProductSizeMaster { get; set; }
         public DbSet<ProductImages> productImages { get; set; }
         public DbSet<ProductReviews> productReviews { get; set; }
         //order tables
         public DbSet<OrderMaster> orderMaster { get; set; }
         public DbSet<OrderDetails> orderDetails { get; set; }
 
-
-
-
+       
     }
 }

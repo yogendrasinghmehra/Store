@@ -77,11 +77,13 @@
     <Compile Include="Entity\Cart\CartDetails.cs" />
     <Compile Include="Entity\Order\OrderDetails.cs" />
     <Compile Include="Entity\Order\OrderMaster.cs" />
+    <Compile Include="Entity\ProductSizeMaster.cs" />
     <Compile Include="Entity\Product\ChildCategory.cs" />
-    <Compile Include="Entity\Product\Product.cs" />
+    <Compile Include="Entity\Product\ProductMaster.cs" />
     <Compile Include="Entity\Product\ProductBrand.cs" />
     <Compile Include="Entity\Product\ProductCategory.cs" />
     <Compile Include="Entity\Product\ProductColor.cs" />
+    <Compile Include="Entity\Product\ProductColorMaster.cs" />
     <Compile Include="Entity\Product\ProductImages.cs" />
     <Compile Include="Entity\Product\ProductReviews.cs" />
     <Compile Include="Entity\Product\ProductSize.cs" />
