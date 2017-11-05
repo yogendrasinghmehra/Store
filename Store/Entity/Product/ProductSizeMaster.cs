@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Store.Entity
+namespace Store.Entity.Product
 {
     public class ProductSizeMaster
     {

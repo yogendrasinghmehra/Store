@@ -176,7 +176,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AddProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductBrandsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoriesController.cs" />
@@ -184,6 +184,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductColorsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductSizesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductSubCategoriesController.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Product\IndexViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -204,11 +205,24 @@
     <Compile Include="Migrations\201710291401515_size and color saprated.Designer.cs">
       <DependentUpon>201710291401515_size and color saprated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711040943086_product-image chnages.cs" />
+    <Compile Include="Migrations\201711040943086_product-image chnages.Designer.cs">
+      <DependentUpon>201711040943086_product-image chnages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711041054558_removed fk from product mater.cs" />
+    <Compile Include="Migrations\201711041054558_removed fk from product mater.Designer.cs">
+      <DependentUpon>201711041054558_removed fk from product mater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711041246315_product_master changes.cs" />
+    <Compile Include="Migrations\201711041246315_product_master changes.Designer.cs">
+      <DependentUpon>201711041246315_product_master changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Product\ViewModelProduct.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\ViewScripts\Products\IndexViewScript.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Common\css\awe-background.css" />
@@ -591,11 +605,11 @@
     <Content Include="Content\Common\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Common\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Common\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Areas\Admin\Views\AddProducts\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\AddProducts\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\AddProducts\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\AddProducts\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\AddProducts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -661,6 +675,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710291401515_size and color saprated.resx">
       <DependentUpon>201710291401515_size and color saprated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711040943086_product-image chnages.resx">
+      <DependentUpon>201711040943086_product-image chnages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711041054558_removed fk from product mater.resx">
+      <DependentUpon>201711041054558_removed fk from product mater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711041246315_product_master changes.resx">
+      <DependentUpon>201711041246315_product_master changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

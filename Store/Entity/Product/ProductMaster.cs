@@ -19,15 +19,13 @@ namespace Store.Entity.Product
         public string Name { get; set; }
 
         [Required]        
-        public int CategoryId { get; set; }
-        
-        public int SubCategoryId { get; set; }
-              
+        public int CategoryId { get; set; }        
+        public int? SubCategoryId { get; set; }
+        public int? ChildCategoryId { get; set; }
         public int BrandId { get; set; }
         
         [Required]       
         public int Quantity { get; set; }
-
         public string ProductDescription { get; set; }
 
         [Required]
@@ -35,9 +33,12 @@ namespace Store.Entity.Product
 
         [Required]
         public int Stock { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public DateTime ModifiedOn { get; set; }
 
         public virtual ProductCategory ProductCategory { get; set; }
         public virtual ProductSubCategory ProductSubCategory { get; set; }
+        public virtual ProductChildCategory  ProductChildCategory{ get; set; }
         public virtual ProductBrand ProductBrand { get; set; }      
 
 

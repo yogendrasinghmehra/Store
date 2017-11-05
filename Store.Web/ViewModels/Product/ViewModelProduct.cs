@@ -11,17 +11,18 @@ namespace Store.Web.ViewModels.Product
     public class ViewModelProduct
     {
 
-        [Key]
-        public int ProductId { get; set; }
-
+     
         [Required]
         [StringLength(200)]
         public string Name { get; set; }
 
         [Required]
+        [Range(1,int.MaxValue,ErrorMessage ="Select a category for product")]
         public int CategoryId { get; set; }
 
-        public int SubCategoryId { get; set; }
+        public int? SubCategoryId { get; set; }
+
+        public int? ChildCategoryId { get; set; }
 
         public int BrandId { get; set; }
 
@@ -37,11 +38,16 @@ namespace Store.Web.ViewModels.Product
         public int Stock { get; set; }
 
         public List <ProductCategory> ProductCategory { get; set; }
+        public List<ProductSubCategory> ProductSubCategory { get; set; }
+        public List<ProductChildCategory> ProductChildCategory { get; set; }
         public List <ProductColor> ProductColor { get; set; }
+        
         public List<ProductBrand> ProductBrand { get; set; }
+        
         public List<ProductSize> ProductSize { get; set; }
-        public List <ProductImages> ProductImages { get; set; }
-
+        
+        public HttpPostedFileBase[] productImages { get; set; }
+       
         public List<ProductMaster> ProductLists { get; set; }
 
 

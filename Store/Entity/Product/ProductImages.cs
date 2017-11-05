@@ -21,13 +21,16 @@ namespace Store.Entity.Product
         public string  ImageUrl { get; set; }
 
         [Required]
+        public int ProductId { get; set; }
+
+        [Required]
         public DateTime CreatedOn { get; set; }
 
         [Required]
         public bool ShowThis { get; set; }
 
         [Required]
-        public virtual ApplicationUser User { get; set; }
+        public virtual ProductMaster ProductMaster { get; set; }
 
 
 

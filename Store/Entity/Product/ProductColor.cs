@@ -18,5 +18,8 @@ namespace Store.Entity.Product
         [StringLength(20)]
         public string ColorText { get; set; }
 
+        [NotMapped]
+        public bool IsSelected { get; set; }
+
     }
 }

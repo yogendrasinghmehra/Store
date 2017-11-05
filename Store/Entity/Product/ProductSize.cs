@@ -18,5 +18,8 @@ namespace Store.Entity.Product
         [StringLength(50)]
         public string SizeText { get; set; }
 
+        [NotMapped]
+        public bool IsSelected { get; set; }
+
     }
 }
