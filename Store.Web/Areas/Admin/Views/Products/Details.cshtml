@@ -1,4 +1,4 @@
-﻿@model Store.Web.ViewModels.Product.ViewModelProduct
+﻿@model Store.Web.Areas.Admin.ViewModels.Product.DetailViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -10,74 +10,114 @@
 <div>
     <h4>ViewModelProduct</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+    <div class="row">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </dt>
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td>@Model.productMaster.Name</td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>@Model.productMaster.ProductCategory.CategoryName</td>
+                </tr>
+                <tr>
+                    <td>Sub Category</td>
+                    <td>
+                       @if (Model.productMaster.ProductSubCategory != null) {@Model.productMaster.ProductSubCategory.SubCategoryName }
+                    
+                    </td>
 
-        <dd>
-            @Html.DisplayFor(model => model.CategoryId)
-        </dd>
+                </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SubCategoryId)
-        </dt>
+                <tr>
+                    <td>Child Category</td>
+                    <td>
+                        @if (Model.productMaster.ProductChildCategory != null)
+                        {@Model.productMaster.ProductChildCategory.ChildCategoryName }
 
-        <dd>
-            @Html.DisplayFor(model => model.SubCategoryId)
-        </dd>
+                    </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BrandId)
-        </dt>
+                </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.BrandId)
-        </dd>
+                <tr>
+                    <td>Brand</td>
+                    <td>
+                    @Model.productMaster.ProductBrand.BrandName</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
+                </tr>
+                <tr>
+                    <td>Quanitity</td>
+                    <td>@Model.productMaster.Quantity</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>@Model.productMaster.Price</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductDescription)
-        </dt>
+                </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductDescription)
-        </dd>
+                <tr>
+                    <td>Stock</td>
+                    <td>@Model.productMaster.Stock</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+                </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
+                <tr>
+                    <td>Description</td>
+                    <td>@Model.productMaster.ProductDescription</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Stock)
-        </dt>
+                </tr>
+            </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.Stock)
-        </dd>
+        </div>
+        <div class="col-md-6">
+            
+            <div class="row">
+                <strong>Product Images</strong>
+                @foreach (var image in Model.ImageList)
+                {
+                    <div class="col-md-4">
 
-    </dl>
+                        <img class="img-responsive" src="~/@image.ImageUrl" width="100" height="100" />
+                    </div>
+                }
+            </div>
+            <hr />
+            <div class="row">
+                <strong>Product Color - </strong>
+                @foreach (var color in Model.ColorList)
+                {
+                 
+                 <span class="product-tags">@color.ProductColor.ColorText</span>
+                 
+                }
+            </div>
+             <hr />   
+            <div class="row">
+                <strong>Product Size - </strong>
+                @foreach (var size in Model.SizeList)
+                {
+                 
+
+                        <span class="product-tags">@size.ProductSize.SizeText</span>
+                 
+                }
+            </div>
+                
+            
+        </div>
+        
+       
+       
+    </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.productMaster.ProductId }) |
+    @Html.ActionLink("Back to List", "Index") | 
+    @Html.ActionLink("Delete", "Delete", new { id = Model.productMaster.ProductId }) 
+
 </p>

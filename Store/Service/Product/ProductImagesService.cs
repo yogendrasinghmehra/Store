@@ -12,8 +12,9 @@ namespace Store.Service.Product
 {
    public class ProductImagesService
     {
-        //private ApplicationDbContext db = new ApplicationDbContext();
-
+        private ApplicationDbContext dbCon = new ApplicationDbContext();
+        
+        //save product images to folder
         public string[] SaveProductImages(HttpPostedFileBase[] imagesFiles,string FolderName)
         {
             string[] imageUrls = new string[imagesFiles.Length];
@@ -41,6 +42,7 @@ namespace Store.Service.Product
             
         }
 
+        //save product url in database
         public void AddProductImages(string[] productImageUrls, int productId, ApplicationDbContext db)
         {
             try
@@ -68,11 +70,34 @@ namespace Store.Service.Product
 
         }
 
+        //getting unique name for products
         private string GetUniqueName()
         {
             Guid newId = Guid.NewGuid();
 
             return newId.ToString();
+        }
+
+        //removing product images form folder and database
+        public bool RemoveProductImage(int ImageId)
+        {
+            bool status = false;
+            var image = dbCon.productImages.Where(i => i.ImageId == ImageId).SingleOrDefault();
+            if (image!=null)
+            {                            
+                dbCon.productImages.Remove(image);
+                dbCon.SaveChanges();
+
+                if (File.Exists(Path.Combine(HttpContext.Current.Server.MapPath("~"), image.ImageUrl)))
+                {
+                    File.Delete(Path.Combine(HttpContext.Current.Server.MapPath("~"), image.ImageUrl));
+                    status = true;
+                }
+
+            }
+
+            return status;
+
         }
     }
 

@@ -28,8 +28,7 @@ namespace Store.Entity.Product
 
         [Required]
         public bool ShowThis { get; set; }
-
-        [Required]
+        
         public virtual ProductMaster ProductMaster { get; set; }
 
 

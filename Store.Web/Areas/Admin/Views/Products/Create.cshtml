@@ -136,6 +136,10 @@
                         <input type="submit" value="Create" class="btn btn-default" />                    
                         <input type="reset" value="Clear" class="btn btn-dark" />
                 </div>
+
+                <div class="form-group">
+                   
+                </div>
             </div>
 
          
@@ -150,68 +154,8 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-
-<script>
-
-    $(function () {
-
-        $('#CategoryId').on('change', function () {
-            if ($(this).val()) {
-                var dataToSend = { CatId: $(this).val() };
-                $.ajax({
-                    url: "@Url.Action("GetSubCategory", "Products")",
-                    data: dataToSend,
-                    type: "GET",
-                    dataType: "json",
-                    success: function (data) {
-                        $('#SubCategoryId').empty();
-                        $('#ChildCategoryId').empty();
-                        $('#SubCategoryId').append("<option value=''>Select Sub Category</option>");
-
-                        if (data) {
-                                $.each(data, function (key, value) {
-                                $('#SubCategoryId').append("<option value='" + value.SubCategoryId + "'>" + value.SubCategoryName + "</option>");
-
-                            })
-                        }
-
-
-                    }
-                })
-            }
-        });
-
-        $('#SubCategoryId').on('change', function () {
-            if ($(this).val()) {
-                var dataToSend = { SubCatId: $(this).val() };
-                $.ajax({
-                    url: "@Url.Action("GetChildCategory", "Products")",
-                    data: dataToSend,
-                    type: "GET",
-                    dataType: "json",
-                    success: function (data) {
-                        $('#ChildCategoryId').empty();
-                        $('#ChildCategoryId').append("<option  value=''>Select Child Category</option>");
-                        if (data) {
-                            $.each(data, function (key, value) {
-                                $('#ChildCategoryId').append("<option value='" + value.ChildCategoryId + "'>" + value.ChildCategoryName + "</option>");
-
-                            });
-                        }
-
-
-                    }
-                })
-            }
-            else { $('#ChildCategoryId').empty(); }
-        });
-
-    })
-
-</script>
-
-
+    @Scripts.Render("~/bundles/jqueryval")     
+   <script src="~/Areas/Admin/ViewScripts/Products/CreateViewScript.js"></script>
 }
 
 
