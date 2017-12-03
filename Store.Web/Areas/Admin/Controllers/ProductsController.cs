@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using Store.Models;
+using Store;
 using Store.Web.ViewModels.Product;
 using Store.Service.Product;
 using Store.Entity.Product;

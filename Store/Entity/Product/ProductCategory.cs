@@ -19,6 +19,8 @@ namespace Store.Entity.Product
         [Required]
         [StringLength(100)]
         public string CategoryName { get; set; }
+
+
         
     }
 }

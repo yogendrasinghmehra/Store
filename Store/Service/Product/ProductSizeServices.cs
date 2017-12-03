@@ -1,5 +1,5 @@
 ﻿using Store.Entity.Product;
-using Store.Models;
+using Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;

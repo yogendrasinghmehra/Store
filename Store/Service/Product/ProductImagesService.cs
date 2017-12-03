@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.IO;
 using Store.Entity.Product;
-using Store.Models;
+using Store;
 
 namespace Store.Service.Product
 {

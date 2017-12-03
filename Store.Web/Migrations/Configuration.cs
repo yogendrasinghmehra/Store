@@ -5,14 +5,14 @@ namespace Store.Web.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Store.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Store.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Store.Models.ApplicationDbContext context)
+        protected override void Seed(Store.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

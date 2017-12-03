@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Store.Entity.Product;
-using Store.Models;
+using Store;
 
 namespace Store.Web.Areas.Admin.Controllers
 {

@@ -68,8 +68,11 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
@@ -175,6 +178,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
@@ -187,6 +191,10 @@
     <Compile Include="Areas\Admin\ViewModels\Product\DetailViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Product\EditViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Product\IndexViewModel.cs" />
+    <Compile Include="Areas\Vendor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Vendor\VendorAreaRegistration.cs" />
+    <Compile Include="Areas\Vendor\ViewModels\Home\Register.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -220,7 +228,9 @@
       <DependentUpon>201711041246315_product_master changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Product\ViewModelProduct.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -614,6 +624,10 @@
     <Content Include="Common\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Common\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Common\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Vendor\Views\web.config" />
+    <Content Include="Areas\Vendor\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Vendor\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Vendor\Views\Home\Register.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -641,11 +655,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\BaseHeaderView.cshtml" />
+    <Content Include="Views\Shared\BaseFooterView.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\Vendor\Models\" />
     <Folder Include="Scripts\ViewScripts\" />
   </ItemGroup>
   <ItemGroup>
